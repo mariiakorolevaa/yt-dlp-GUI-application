@@ -49,13 +49,11 @@ class MyFrame(wx.Frame):
         self.destination.SetHint('Enter a destination folder')
         self.destination.SetBackgroundColour('#e4dbe2')
         self.destination.SetForegroundColour('#000000')
-        self.destination.SetValue('C:\\Users\\kiris\\Videos')
         self.destination.SetFont(wx.Font(10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
 
         # set current directory as a default value
-        # current_folder = os.path.dirname(os.path.realpath(__file__))
-
-        # self.destination.SetValue(current_folder)
+        current_folder = os.path.dirname(os.path.realpath(__file__))
+        self.destination.SetValue(current_folder)
 
         # create a button to choose a destination folder
         self.choose = wx.Button(self.panel, label='Choose directory', pos=(520, 10), size=(120, 25))
@@ -70,8 +68,6 @@ class MyFrame(wx.Frame):
         self.link.SetHint('Enter a link to a video')
         self.link.SetBackgroundColour('#e4dbe2')
         self.link.SetForegroundColour('#000000')
-        # test value
-        self.link.SetValue('https://www.youtube.com/watch?v=lM1DI5oeOcQ')
         self.link.SetFont(wx.Font(10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL))
 
         # create a button to download a video
